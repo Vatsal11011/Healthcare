@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disease Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        #outputContainer {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Disease Details</h1>
+
+    <div id="outputContainer">
+        <p id="output1"></p>
+        <p id="output2"></p>
+        <p id="output3"></p>
+    </div>
+
+    <!-- ... (previous HTML code) ... -->
+
+<script>
+    const socket = new WebSocket('ws://localhost:8765');
+
+    socket.addEventListener('message', (event) => {
+        // Parse the JSON object received from the WebSocket
+        const { output1, output2, output3 } = JSON.parse(event.data);
+
+        // Update the outputs when a message is received from the WebSocket
+        const outputContainer = document.getElementById('outputContainer');
+        const output1Paragraph = document.createElement('p');
+        const output2Paragraph = document.createElement('p');
+        const output3List = document.createElement('ul');
+
+        output1Paragraph.textContent = output1;
+        output2Paragraph.textContent = output2;
+        output3.forEach(item => {
+            const listItem = document.createElement('li');
+            listItem.textContent = item;
+            output3List.appendChild(listItem);
+        });
+
+        outputContainer.appendChild(output1Paragraph);
+        outputContainer.appendChild(output2Paragraph);
+        outputContainer.appendChild(output3List);
+    });
+</script>
+
+<!-- ... (remaining HTML code) ... -->
+
+</body>
+</html>

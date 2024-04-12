@@ -1,0 +1,43 @@
+<%- include('partials/header') %>
+
+    <header>
+        <nav>
+            <a href="#" class="logo-link">
+                <img src="https://image.similarpng.com/very-thumbnail/2021/06/Medical-health-care-logo-design-template-on-transparent-background-PNG.png" alt="Healthcare Logo" class="logo">
+            </a>
+            <!-- <div class="logoname">Healthcare</div> -->
+            
+            <ul>
+                <li><a href="/index">Home</a></li>
+                <li><a href="/chatwithus">Chat with Us</a></li>
+                <li><a href="/havesymptoms">Have Symptoms??</a></li>
+                <li><a href="#">Our services</a></li>
+                <li><a href="#">About us</a></li>
+                <!-- <li class="login-logout" id="loginBtn"><a href="#" onclick="toggleLogin()">Login</a></li> -->
+                <li class="login-logout" id="logoutBtn" ><a href="/logout" role="button">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="maal">
+    <div class="hsimage">
+        <img src="https://static.vecteezy.com/system/resources/previews/027/577/652/original/collection-of-12-minimal-illustrations-depicts-common-symptoms-of-various-diseases-and-conditions-making-them-ideal-for-use-in-educational-materials-medical-websites-and-marketing-campaigns-vector.jpg" alt="Healthcare Image" class="hssimage">
+    </div>
+    <section id="have-symptoms" class="have-symptoms">
+        <h2>Select all symptoms you are showing (Maximum 17)</h2>
+    
+        <div class="symptom-dropdowns" id="symptomDropdowns">
+            <!-- Add dropdowns dynamically using JavaScript -->
+        </div>
+
+        <button onclick="predictDisease()" class="predict-button">Predict Disease</button>
+    
+        <div class="prediction-results card" id="predictionResults">
+            <!-- Display prediction results here -->
+        </div>
+
+       
+    </section>
+</div>
+    <script src="app.js"></script>
+</body>
+</html>
